@@ -13,5 +13,6 @@ export const ButtonContainer = styled.button<IButtonContainerProps>`
   border: 0;
   margin: 8px;
   
-  background-color: ${({ variant, theme }) => theme[variant]};
+  background-color: ${({ theme }) => theme['green-500']};
+  color: ${({ theme }) => theme.white};
 `

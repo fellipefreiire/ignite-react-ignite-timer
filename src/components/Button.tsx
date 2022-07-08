@@ -5,12 +5,6 @@ interface IButtonProps {
   variant?: ButtonVariant
 }
 
-export function Button({
-  variant = 'primary'
-}: IButtonProps) {
-  return (
-    <S.ButtonContainer variant={variant}>
-      Enviar
-    </S.ButtonContainer>
-  )
+export function Button({ variant = 'primary' }: IButtonProps) {
+  return <S.ButtonContainer variant={variant}>Enviar</S.ButtonContainer>
 }

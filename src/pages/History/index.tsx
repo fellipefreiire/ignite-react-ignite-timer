@@ -1,4 +1,5 @@
-import { useCycles } from '../../store/context/CyclesContext'
+// import { useCycles } from '../../store/context/CyclesContext'
+import { useCycles } from '../../store/zustand/CyclesStore'
 
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
@@ -6,7 +7,8 @@ import { ptBR } from 'date-fns/locale'
 import * as S from './styles'
 
 export function History() {
-  const { cycles } = useCycles()
+  // const { cycles } = useCycles()
+  const cycles = useCycles((s) => s.cycles)
 
   return (
     <S.HistoryContainer>

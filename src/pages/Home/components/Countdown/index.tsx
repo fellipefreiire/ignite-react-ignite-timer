@@ -1,15 +1,24 @@
 import { differenceInSeconds } from 'date-fns'
 import { useEffect } from 'react'
-import { useCycles } from '../../../../store/context/CyclesContext'
+// import { useCycles } from '../../../../store/context/CyclesContext'
+import { useCycles } from '../../../../store/zustand/CyclesStore'
+
 import * as S from './styles'
 
 export function Countdown() {
-  const {
-    activeCycle,
-    secondsPassedAmount,
-    markCurrentCycleAsFinished,
-    setSecondsPassed,
-  } = useCycles()
+  // const {
+  // activeCycle,
+  // secondsPassedAmount,
+  // markCurrentCycleAsFinished,
+  // setSecondsPassed,
+  // } = useCycles()
+
+  const activeCycle = useCycles((s) => s.activeCycle)
+  const secondsPassedAmount = useCycles((s) => s.secondsPassedAmount)
+  const markCurrentCycleAsFinished = useCycles(
+    (s) => s.markCurrentCycleAsFinished,
+  )
+  const setSecondsPassed = useCycles((s) => s.setSecondsPassed)
 
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
 
